@@ -33,8 +33,8 @@ func parseHexOrRGBToColor(s string) (color.RGBA, bool) {
 
 func parseColornameToColor(s string) (color.RGBA, bool) {
 	reg, err := regexp.Compile("[^a-z]+")
-    if err != nil {panic(err)}
-    s = reg.ReplaceAllString(s, "")
+	if err != nil {panic(err)}
+	s = reg.ReplaceAllString(s, "")
 	c, ok := colornames.Map[s]
 	return c, ok
 }
